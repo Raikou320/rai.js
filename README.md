@@ -52,7 +52,7 @@ Dessine un rectangle rempli avec la couleur de remplissage actuelle.
 #### Exemple :
 rect(50, 50, 100, 100);  // Dessine un carré de 100x100 à (50, 50)
 
-### `rai.image(src, x, y, width, height)`
+### `image(src, x, y, width, height)`
 Affiche une image à une position spécifique avec une taille donnée.
 
 #### Paramètres :
@@ -74,12 +74,6 @@ image('image.png', 100, 100, 50, 50);  // Affiche une image de 50x50 à (100, 10
 
 #### Exemple :
 image('image.png', 100, 100, 50, 50);  // Affiche une image en boucle à (100, 100)
-
-### `clear()`
-Efface une seule fois le canevas
-
-#### Exemple :
-clear();  // Efface le canevas une fois.
 
 ## Exemple d'utilisation
 
