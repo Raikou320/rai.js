@@ -8,7 +8,7 @@ Le module `Rai.js` est encapsulé dans une fonction immédiatement invoquée (II
 
 ## Méthodes
 
-### `rai.createCanvas(width, height)`
+### `createCanvas(width, height)`
 Crée un canevas avec les dimensions spécifiées et l'ajoute à la page HTML.
 
 #### Paramètres :
@@ -16,9 +16,9 @@ Crée un canevas avec les dimensions spécifiées et l'ajoute à la page HTML.
 - `height` : La hauteur du canevas (en pixels).
 
 #### Exemple :
-rai.createCanvas(800, 600);
+createCanvas(800, 600);
 
-### `rai.background(r, g, b)`
+### `background(r, g, b)`
 Change la couleur de fond du canevas.
 
 #### Paramètres :
@@ -27,9 +27,9 @@ Change la couleur de fond du canevas.
 - `b` : La composante bleue de la couleur (0-255). Si non fourni, la valeur de `r` sera utilisée.
 
 #### Exemple :
-rai.background(255, 0, 0);  // Fond rouge
+background(255, 0, 0);  // Fond rouge
 
-### `rai.fill(r, g, b)`
+### `fill(r, g, b)`
 Définit la couleur de remplissage pour les dessins futurs sur le canevas.
 
 #### Paramètres :
@@ -38,9 +38,9 @@ Définit la couleur de remplissage pour les dessins futurs sur le canevas.
 - `b` : La composante bleue de la couleur (0-255). Si non fourni, la valeur de `r` sera utilisée.
 
 #### Exemple :
-rai.fill(0, 255, 0);  // Couleur de remplissage verte
+fill(0, 255, 0);  // Couleur de remplissage verte
 
-### `rai.rect(x, y, w, h)`
+### `rect(x, y, w, h)`
 Dessine un rectangle rempli avec la couleur de remplissage actuelle.
 
 #### Paramètres :
@@ -50,23 +50,10 @@ Dessine un rectangle rempli avec la couleur de remplissage actuelle.
 - `h` : La hauteur du rectangle (en pixels).
 
 #### Exemple :
-rai.rect(50, 50, 100, 100);  // Dessine un carré de 100x100 à (50, 50)
-
-### `rai.oneImage(src, x, y, width, height)`
-Affiche une image une seule fois à une position spécifique avec une taille donnée.
-
-#### Paramètres :
-- `src` : Le chemin de l'image à afficher.
-- `x` : La position x où l'image doit être placée.
-- `y` : La position y où l'image doit être placée.
-- `width` : La largeur de l'image (en pixels).
-- `height` : La hauteur de l'image (en pixels).
-
-#### Exemple :
-rai.oneImage('image.png', 100, 100, 50, 50);  // Affiche une image de 50x50 à (100, 100)
+rect(50, 50, 100, 100);  // Dessine un carré de 100x100 à (50, 50)
 
 ### `rai.image(src, x, y, width, height)`
-Affiche une image en continu sur le canevas, en la redessinant à chaque animation.
+Affiche une image à une position spécifique avec une taille donnée.
 
 #### Paramètres :
 - `src` : Le chemin de l'image à afficher.
@@ -76,23 +63,33 @@ Affiche une image en continu sur le canevas, en la redessinant à chaque animati
 - `height` : La hauteur de l'image (en pixels).
 
 #### Exemple :
-rai.image('image.png', 100, 100, 50, 50);  // Affiche une image en boucle à (100, 100)
+image('image.png', 100, 100, 50, 50);  // Affiche une image de 50x50 à (100, 100)
 
-### `rai.clear()`
+#### Paramètres :
+- `src` : Le chemin de l'image à afficher.
+- `x` : La position x où l'image doit être placée.
+- `y` : La position y où l'image doit être placée.
+- `width` : La largeur de l'image (en pixels).
+- `height` : La hauteur de l'image (en pixels).
+
+#### Exemple :
+image('image.png', 100, 100, 50, 50);  // Affiche une image en boucle à (100, 100)
+
+### `clear()`
 Efface une seule fois le canevas
 
 #### Exemple :
-rai.clear();  // Efface le canevas une fois.
+clear();  // Efface le canevas une fois.
 
 ## Exemple d'utilisation
 
 Voici un exemple simple montrant l'utilisation de plusieurs fonctions du module `rai` :
 
-rai.createCanvas(800, 600);
-rai.background(0, 0, 255);  // Fond bleu
-rai.fill(255, 0, 0);  // Remplissage rouge
-rai.rect(50, 50, 100, 100);  // Dessine un carré rouge
-rai.oneImage('sprite.png', 200, 200, 50, 50);  // Affiche une image
+createCanvas(800, 600);
+background(0, 0, 255);  // Fond bleu
+fill(255, 0, 0);  // Remplissage rouge
+rect(50, 50, 100, 100);  // Dessine un carré rouge
+image('sprite.png', 200, 200, 50, 50);  // Affiche une image
 
 ## Remarques
 - Les images sont chargées de manière asynchrone. elle utiliseent `onload` pour garantir qu'elles sont bien affichées une fois complètement chargées.
