@@ -1,94 +1,105 @@
-# Documentation du module `Rai.js`
+# 📘 Rai.js Module Documentation
 
-Ce module fournit des fonctions utiles pour travailler avec un canevas HTML5. Il permet de créer un canevas, de dessiner dessus, de gérer des couleurs, des images et de vider le canevas. 
+This module provides useful functions to work with an HTML5 canvas. It allows you to create a canvas, draw on it, manage colors, display images, and clear the canvas.
 
-## Fonctionnement général
+---
 
-Le module `Rai.js` est encapsulé dans une fonction immédiatement invoquée (IIFE) et est accessible via l'objet global `rai` dans votre application. Il expose plusieurs méthodes pour interagir avec un canevas.
+## ⚙️ General Overview
 
-## Méthodes
+The `Rai.js` module is wrapped in an IIFE (Immediately Invoked Function Expression) and is accessible via the global `rai` object in your app.  
+It exposes several methods to interact with an HTML5 canvas.
 
-### `createCanvas(width, height)`
-Crée un canevas avec les dimensions spécifiées et l'ajoute à la page HTML.
+---
 
-#### Paramètres :
-- `width` : La largeur du canevas (en pixels).
-- `height` : La hauteur du canevas (en pixels).
+## 🧩 Available Methods
 
-#### Exemple :
+### `createCanvas(width, height)`  
+Creates a canvas with the given dimensions and adds it to the page.
+
+**Parameters:**  
+- `width`: Width of the canvas (in pixels)  
+- `height`: Height of the canvas (in pixels)
+
+**Example:**  
 createCanvas(800, 600);
 
-### `background(r, g, b)`
-Change la couleur de fond du canevas.
+---
 
-#### Paramètres :
-- `r` : La composante rouge de la couleur (0-255).
-- `g` : La composante verte de la couleur (0-255). Si non fourni, la valeur de `r` sera utilisée.
-- `b` : La composante bleue de la couleur (0-255). Si non fourni, la valeur de `r` sera utilisée.
+### `background(r, g, b)`  
+Changes the background color of the canvas.
 
-#### Exemple :
-background(255, 0, 0);  // Fond rouge
+**Parameters:**  
+- `r`: Red component (0–255)  
+- `g`: Green component (0–255). If not provided, `r` will be used  
+- `b`: Blue component (0–255). If not provided, `r` will be used
 
-### `fill(r, g, b)`
-Définit la couleur de remplissage pour les dessins futurs sur le canevas.
+**Example:**  
+background(255, 0, 0); // Red background
 
-#### Paramètres :
-- `r` : La composante rouge de la couleur (0-255).
-- `g` : La composante verte de la couleur (0-255). Si non fourni, la valeur de `r` sera utilisée.
-- `b` : La composante bleue de la couleur (0-255). Si non fourni, la valeur de `r` sera utilisée.
+---
 
-#### Exemple :
-fill(0, 255, 0);  // Couleur de remplissage verte
+### `fill(r, g, b)`  
+Sets the fill color for future shapes.
 
-### `rect(x, y, w, h)`
-Dessine un rectangle rempli avec la couleur de remplissage actuelle.
+**Parameters:**  
+- `r`: Red component (0–255)  
+- `g`: Green component (0–255). If not provided, `r` will be used  
+- `b`: Blue component (0–255). If not provided, `r` will be used
 
-#### Paramètres :
-- `x` : La position x du coin supérieur gauche du rectangle (en pixels).
-- `y` : La position y du coin supérieur gauche du rectangle (en pixels).
-- `w` : La largeur du rectangle (en pixels).
-- `h` : La hauteur du rectangle (en pixels).
+**Example:**  
+fill(0, 255, 0); // Green fill
 
-#### Exemple :
-rect(50, 50, 100, 100);  // Dessine un carré de 100x100 à (50, 50)
+---
 
-### `image(src, x, y, width, height)`
-Affiche une image à une position spécifique avec une taille donnée.
+### `rect(x, y, w, h)`  
+Draws a filled rectangle using the current fill color.
 
-#### Paramètres :
-- `src` : Le chemin de l'image à afficher.
-- `x` : La position x où l'image doit être placée.
-- `y` : La position y où l'image doit être placée.
-- `width` : La largeur de l'image (en pixels).
-- `height` : La hauteur de l'image (en pixels).
+**Parameters:**  
+- `x`: X position (top-left corner)  
+- `y`: Y position (top-left corner)  
+- `w`: Width of the rectangle  
+- `h`: Height of the rectangle
 
-#### Exemple :
-image('image.png', 100, 100, 50, 50);  // Affiche une image de 50x50 à (100, 100)
+**Example:**  
+rect(50, 50, 100, 100); // Red square at (50, 50)
 
-#### Paramètres :
-- `src` : Le chemin de l'image à afficher.
-- `x` : La position x où l'image doit être placée.
-- `y` : La position y où l'image doit être placée.
-- `width` : La largeur de l'image (en pixels).
-- `height` : La hauteur de l'image (en pixels).
+---
 
-#### Exemple :
-image('image.png', 100, 100, 50, 50);  // Affiche une image en boucle à (100, 100)
+### `image(src, x, y, width, height)`  
+Displays an image at a specific position and size.
 
-## Exemple d'utilisation
+**Parameters:**  
+- `src`: Image file path  
+- `x`: X position  
+- `y`: Y position  
+- `width`: Width of the image  
+- `height`: Height of the image
 
-Voici un exemple simple montrant l'utilisation de plusieurs fonctions du module `rai` :
+**Example:**  
+image('image.png', 100, 100, 50, 50); // Draws image at (100, 100)
 
-createCanvas(800, 600);
-background(0, 0, 255);  // Fond bleu
-fill(255, 0, 0);  // Remplissage rouge
-rect(50, 50, 100, 100);  // Dessine un carré rouge
-image('sprite.png', 200, 200, 50, 50);  // Affiche une image
+---
 
-## Remarques
-- Les images sont chargées de manière asynchrone. elle utiliseent `onload` pour garantir qu'elles sont bien affichées une fois complètement chargées.
-- La taille du canevas et du contexte (`ctx`) sont stockées dans des variables globales accessibles via `window`.
+## 🧪 Usage Example
 
-## Auteurs
+```html
+createCanvas(800, 600)  
+background(0, 0, 255) // Blue background  
+fill(255, 0, 0) // Red fill  
+rect(50, 50, 100, 100) // Red square  
+image('sprite.png', 200, 200, 50, 50) // Display image
+```
 
-- Ce module a été développé Raikou 320, [github](https://github.com/Raikou320).
+---
+
+## 💡 Notes
+
+- Images are loaded asynchronously using `onload` to ensure they are drawn after being fully loaded.  
+- The canvas and its context (`ctx`) are stored in global variables accessible via `window`.
+
+---
+
+## 📖 Author
+
+Created by **Raikou 320**  
+GitHub: [https://github.com/Raikou320](https://github.com/Raikou320)
